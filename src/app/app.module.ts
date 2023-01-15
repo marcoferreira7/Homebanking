@@ -1,12 +1,11 @@
 import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './login/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { OperacoesComponent } from './operacoes/operacoes.component';
-
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -18,17 +17,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    OperacoesComponent
-  ],
+  declarations: [AppComponent, LoginComponent, OperacoesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,12 +36,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
-
+    MatSnackBarModule,
   ],
   providers: [
-    { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' } // Moeda Euro por default
+    { provide: DEFAULT_CURRENCY_CODE, useValue: 'EUR' }, // Moeda Euro por default
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

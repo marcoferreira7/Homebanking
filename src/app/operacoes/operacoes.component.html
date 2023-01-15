@@ -1,17 +1,17 @@
 <!-- Esta componente desenha o formulário de operaçoes onde se pode consultar a Lista de Movimentos,
 o Deposito de Fundos e Retirar Fundos-->
 
+<mat-toolbar color="primary">Operações</mat-toolbar>
 <div fxLayoutAlign="center" fxFlexFill class="main-div">
     <mat-card fxFlex="0">
-        <mat-toolbar color="primary">Operações</mat-toolbar>
-        <div class="demo-button-container">
+        <div class="demo-button-container" fxLayoutAlign="center" fxLayoutGap="15px" class="md-padding">
             <button mat-raised-button (click)="addData()" class="demo-button">
                 Adicionar Fundos
             </button>
             <button mat-raised-button [disabled]="!dataToDisplay.length" (click)="removeData()" class="demo-button">
                 Remover Fundos
             </button>
-            <!-- input -->
+            <!-- Inserir Quantia -->
             <mat-form-field appearance="fill" floatLabel="always">
                 <mat-label>Quantia</mat-label>
                 <input matInput [formControl]="amountControl" type="number" class="example-right-align" placeholder="0">
@@ -19,15 +19,17 @@ o Deposito de Fundos e Retirar Fundos-->
                 <span matTextSuffix>.00</span>
             </mat-form-field>
         </div>
+
+
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-            <!-- Item Column -->
+            <!-- Descrição -->
             <ng-container matColumnDef="item">
                 <th mat-header-cell *matHeaderCellDef> Descrição </th>
                 <td mat-cell *matCellDef="let transaction"> {{transaction.item}} </td>
                 <td mat-footer-cell *matFooterCellDef> Total </td>
             </ng-container>
 
-            <!-- Cost Column -->
+            <!-- Valor -->
             <ng-container matColumnDef="cost">
                 <th mat-header-cell *matHeaderCellDef> Valor </th>
                 <td mat-cell *matCellDef="let transaction"> {{transaction.cost | currency}} </td>

@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+
+tr.mat-mdc-footer-row td {
+  font-weight: bold;
+}
+
+.main-div mat-card {
+  padding: 20px;
+
+}
